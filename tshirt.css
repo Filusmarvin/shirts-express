@@ -1,0 +1,204 @@
+body{
+	display:flex;
+	justify-content: space-between;
+}
+
+/*article{
+	border:1px solid #81bce6;
+}*/
+.shirt{
+	border:3px solid #81bce6;
+	padding: 21px;
+}
+
+.bottom-section{
+	/*border: 1px solid #81bce6;*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height:64px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.fa{
+	border: 3px solid #81bce6;
+	padding: 20px;
+	width:37px;
+	color: #81bce6;
+}
+
+.fa:hover{
+	background-color: #81bce6;
+	color:white;
+}
+
+.fa:hover .shirt-color{
+	background-color: #81bce6;
+	color:white;
+	border: 1px solid white;
+}
+.color-boxes{
+	display: none;
+}
+
+.shirt-box{
+	align-items: center;
+	justify-content: space-around;
+	width: 30px;
+	height: 30px;
+}
+
+.shirt-color{
+	background-color: #81bce6;
+	width: 30px;
+	height: 30px;
+}
+
+.item{
+	display: flex;
+	justify-content: space-between;
+	color: #81bce6;
+	font-size: 20px;
+}
+
+
+/*
+************************************					Size Drop Down Menu					****************************
+*/
+
+.menu1{
+	position: absolute;
+    left: 165px;
+    top: 177px;
+    height: 230px;
+    width: 97px;
+    align-items: center;
+	display:none;
+}
+
+.menu2{
+	position: absolute;
+    left: 675px;
+    top: 177px;
+    height: 230px;
+    width: 97px;
+    align-items: center;
+	display:none;
+}
+
+.menu3{
+	position: absolute;
+    left: 1185px;
+    top: 177px;
+    height: 230px;
+    width: 97px;
+    align-items: center;
+	display:none;
+}
+
+.menulist{
+	list-style: none;
+	padding-left: 0px;
+}
+
+li {
+	background-color:white;
+	text-align: center;
+	flex-direction: column;
+	justify-content: space-around;
+	display: flex;
+	padding: 18px;
+	color:#81bce6;
+}
+
+
+
+/*
+*****************		This is the color boxes			**************
+*/
+
+.color1{
+	position: absolute;
+	background-color: white;
+	border: 1px solid #81bce6;
+	height: 100px;
+	width: 100px;
+	left: 245px;
+	top: 305px;
+
+}
+
+.color2{
+	position: absolute;
+	background-color: white;
+	border: 1px solid #81bce6;
+	height: 100px;
+	width: 100px;
+	left: 755px;
+	top: 305px;
+
+}
+
+
+.color3{
+	position: absolute;
+	background-color: white;
+	border: 1px solid #81bce6;
+	height: 100px;
+	width: 100px;
+	left: 1260px;
+	top: 305px;
+
+}
+
+.fourboxes{
+	position: absolute;
+	border: 1px solid #81bce6;
+	width: 40px;
+	height:40px;
+}
+
+.blue{
+	position:absolute;
+	top:2px;
+	left: 4px;
+	background-color: #81bce6;
+}
+
+.orange{
+	position:absolute;
+	top:54px;
+	left: 4px;
+	background-color: orange;
+}
+
+.pink{
+	position: absolute;
+	left: 54px;
+	top:2px;
+	background-color: pink;
+}
+
+.green{
+	position:absolute;
+	background-color: green;
+	left: 54px;
+	top: 54px;
+}
+
+
+/*
+***************** THis is the shopping cart **************
+*/
+
+.cart{
+	position:absolute;
+	left: 10px;
+    top: 550px;
+}
+
+.cartTitle{
+	color:#81bce6;
+	font-size: 20px;
+}
