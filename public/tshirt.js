@@ -80,17 +80,17 @@ function added (total, sum){
 	return total + sum;
 }
 
-function putInCart() {
-	var price = $(this).parent().next().find('.price').text();
-	var name  = $(this).parent().next().find('.name').text();
-	total.push(price)
-	let totals = total.map(toNum).reduce(added)
-	$('#total').text(totals)
-	$("#shoppingcart").append('<li>' + name + price + '</li>')
-}
+// function putInCart() {
+// 	var price = $(this).parent().next().find('.price').text();
+// 	var name  = $(this).parent().next().find('.name').text();
+// 	total.push(price)
+// 	let totals = total.map(toNum).reduce(added)
+// 	$('#total').text(totals)
+// 	$("#shoppingcart").append('<li>' + name + price + '</li>')
+// }
 
 
-$(".fa-shopping-cart").on( 'click', putInCart)
+// $(".fa-shopping-cart").on( 'click', putInCart)
 
 function add(a , b) {
     return( a + b);
@@ -103,9 +103,13 @@ function addPrices(sum){
 
 $('#total').click(addPrices);
 
-$.get("localhost:3000/user/", function(data){
-	let something = data.name;
-	let overHere = $('.here');
-	overHere.text(something)
-});
-// use .map on the array to get the strings into numbers which will push it into a new array
+$('.fa-shopping-cart').on('click', getPrice)
+
+function getPrice() {
+	let som = $(this).attr("value");
+	$.get(`http://localhost:3000/shirt/${som}`, function(data){
+		let price = data.price;
+		let name = data.name;
+		$('#shoppingcart').append("<li>" + name  +  price + " </li>")
+	});
+}

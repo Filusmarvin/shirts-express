@@ -1,14 +1,17 @@
 [
   {
+    "id":"0",
+    "name":"Save the Trees ",
+    "price":"$29"
+  },
+  {
     "id":"1",
-    "name":"Chris"
+    "name": "Natures Lover ",
+    "price": "$19"
   },
   {
-    "id":"2",
-    "name": "Marvin"
-  },
-  {
-    "id": "3",
-    "name": "brian"
+    "id": "2",
+    "name": "Forrest Walk ",
+    "price": "$39"
   }
 ]
