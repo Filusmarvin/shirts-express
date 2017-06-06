@@ -71,6 +71,7 @@ $('.fourboxes').on('click', whichColor)
 //********************************************** This is for the shopping cart to add the shirt and the price to the cart. ***********
 
 var total = [];
+var arr = [];
 
 function toNum (num){
 	return parseInt(num)
@@ -106,6 +107,10 @@ $('#total').click(addPrices);
 $('.fa-shopping-cart').on('click', getPrice)
 
 function getPrice() {
+
+
+
+
 	let som = $(this).attr("value");
 	$.get(`http://localhost:3000/shirt/${som}`, function(data){
 		let price = data.price;
@@ -113,3 +118,5 @@ function getPrice() {
 		$('#shoppingcart').append("<li>" + name  +  price + " </li>")
 	});
 }
+
+console.log('something')

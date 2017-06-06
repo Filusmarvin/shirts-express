@@ -71,6 +71,9 @@ $('.fourboxes').on('click', whichColor)
 //********************************************** This is for the shopping cart to add the shirt and the price to the cart. ***********
 
 var total = [];
+var tree = [];
+var nature = [];
+var forrest = [];
 
 function toNum (num){
 	return parseInt(num)
@@ -105,11 +108,59 @@ $('#total').click(addPrices);
 
 $('.fa-shopping-cart').on('click', getPrice)
 
+var cart = 0
+var total = []
+var clicked = 0
+var pressed = 0
+var selected = 0
+
 function getPrice() {
 	let som = $(this).attr("value");
 	$.get(`http://localhost:3000/shirt/${som}`, function(data){
 		let price = data.price;
 		let name = data.name;
-		$('#shoppingcart').append("<li>" + name  +  price + " </li>")
+
+
+		if(name.length === 15 ){
+			tree.push(data.name)
+			clicked++
+			if (clicked <= 8 ){
+				$('#shoppingcart').append("<li>" + name  +  price + " </li>")
+				total.push(29)
+			}
+		}else if (name.length === 14 ) {
+			nature.push(data.name)
+			pressed++
+			if (pressed <= 8 ){
+				$('#shoppingcart').append("<li>" + name  + price + " </li>")
+				total.push(19)
+			}
+		} else if (name.length === 13 ) {
+			forrest.push(name)
+			selected++
+			if (selected <= 8 ){
+				$('#shoppingcart').append("<li>" + name  +  price + " </li>")
+				total.push(39)
+			}
+		}else{null}
+
+		let totals = total.reduce(add, 0);
+
+
+		if ( total.length > 4 ){
+			$('#total').text(total.reduce( add, 0 ) * .95)
+		} else {
+			$('#total').text(totals)
+		}
+
+		console.log(totals)
+
 	});
+}
+
+
+
+function add(a, b) {
+    return a + b;
+		// console.log(a + b )
 }
